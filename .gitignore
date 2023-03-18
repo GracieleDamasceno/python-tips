@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.DS_Store
+schematics/.DS_Store
+schematics/.idea/misc.xml
+schematics/.idea/sonarlint/issuestore/index.pb
+schematics/.idea/sonarlint/securityhotspotstore/index.pb
+schematics/.idea/vcs.xml
+schematics/schematics/.DS_Store
+schematics/schematics/.idea/misc.xml
+schematics/schematics/.idea/modules.xml
+schematics/schematics/.idea/schematics.iml
+schematics/schematics/.idea/sonarlint/issuestore/index.pb
+schematics/schematics/.idea/sonarlint/securityhotspotstore/index.pb
+schematics/schematics/.idea/vcs.xml
