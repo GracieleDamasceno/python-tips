@@ -1,8 +1,9 @@
 from input.input import get_input
 from model.list_person import ListPerson
 
-input = get_input()
+json_input = get_input()
 
-person = ListPerson(input)
-person.validate()
-print(person.to_primitive())
+list_person = ListPerson(json_input)
+list_person.validate()
+print(list_person.to_primitive(role='public_person'))
+
