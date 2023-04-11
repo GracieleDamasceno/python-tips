@@ -1,5 +1,5 @@
 from schematics import Model
-from schematics.transforms import blacklist
+from schematics.transforms import blacklist, whitelist
 from schematics.types import IntType, StringType
 
 
@@ -8,4 +8,4 @@ class Friend(Model):
     name = StringType()
 
     class Options:
-        roles = {'public_person': blacklist()}
+        roles = {'public_person': blacklist(), 'profile_info': whitelist()}

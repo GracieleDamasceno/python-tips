@@ -1,5 +1,5 @@
 from schematics import Model
-from schematics.transforms import blacklist
+from schematics.transforms import blacklist, whitelist
 from schematics.types import ModelType, StringType, IntType, UUIDType, BooleanType, URLType, EmailType, DateTimeType, \
     GeoPointType, ListType
 
@@ -32,10 +32,13 @@ class Person(Model):
     greeting = StringType()
     favorite_fruit = StringType(deserialize_from='favoriteFruit')
 
-    # Creating a role to be implemented by schematics when outputting data to primitive. This role is called
-    # 'public_person' and omits sensitive data, such as id, index and balance. This role should be declared in inner
-    # and outer classes of this context as well, which declaration of itens could be empty (see: Friend class).
+    # Creating a role to be implemented by schematics when outputting data to primitive. The role 'public_person'
+    # omits sensitive data, such as id, index and balance.
+
+    # Those roles should be declared in inner and outer classes of this context as well, which declaration of itens
+    # could be empty (see: Friend class).
     class Options:
         roles = {
-            'public_person': blacklist('id', 'index', 'guid', 'is_active', 'balance')
+            'public_person': blacklist('id', 'index', 'guid', 'is_active', 'balance'),
+            'profile_info': whitelist('name', 'greeting', 'gender', 'picture', 'about', 'age')
         }
