@@ -1,5 +1,5 @@
 from schematics import Model
-from schematics.transforms import blacklist, whitelist, wholelist
+from schematics.transforms import wholelist
 from schematics.types import ModelType, ListType
 
 from model.person import Person
